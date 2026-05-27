@@ -164,7 +164,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .nav__logo-accent { color: var(--gold); }
 .nav__logo-sub {
   font-family: var(--font-sans);
-  font-size: 0.6rem;
+  font-size: 10px;
   font-weight: 400;
   letter-spacing: 0.12em;
   text-transform: uppercase;
