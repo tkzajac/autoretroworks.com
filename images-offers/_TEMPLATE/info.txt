@@ -1,0 +1,13 @@
+Marka (Make):
+Model:
+Rok (Year):
+Przebieg (Mileage):
+Cena (Price):       PLN
+Stan (Condition):
+Opis (Description):
+
+---
+Zdjęcia (Photos): dodaj pliki 01.jpg, 02.jpg itd. do tego folderu
+Photos: add files 01.jpg, 02.jpg etc. to this folder
+---
+Nazwa folderu / Folder name: marka-model-rok  (np. mercedes-220s-1965)
