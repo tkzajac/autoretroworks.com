@@ -156,8 +156,9 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   font-weight: 700;
   white-space: nowrap;
   display: flex;
-  flex-direction: column;
-  line-height: 1.1;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
 }
 .nav__logo-main  { color: var(--cream); }
 .nav__logo-accent { color: var(--gold); }
@@ -168,6 +169,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--grey);
+  border-left: 1px solid var(--border);
+  padding-left: 12px;
 }
 
 .nav__links {
