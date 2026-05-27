@@ -229,3 +229,51 @@ document.querySelectorAll('.forsale-slider').forEach(slider => {
   slider.querySelector('.forsale-slider__btn--next')
     .addEventListener('click', () => goTo(current + 1));
 });
+
+
+// ─── Lightbox ─────────────────────────────────────────
+const lightbox     = document.getElementById('lightbox');
+const lightboxImg  = document.getElementById('lightboxImg');
+const lightboxCtr  = document.getElementById('lightboxCounter');
+let lbImages = [], lbIndex = 0;
+
+function openLightbox(imgs, idx) {
+  lbImages = imgs;
+  lbIndex  = idx;
+  showLightboxSlide();
+  lightbox.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  lightbox.classList.remove('open');
+  document.body.style.overflow = '';
+}
+function showLightboxSlide() {
+  lightboxImg.src = lbImages[lbIndex];
+  lightboxCtr.textContent = lbImages.length > 1 ? `${lbIndex + 1} / ${lbImages.length}` : '';
+}
+
+document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+document.getElementById('lightboxPrev').addEventListener('click', () => {
+  lbIndex = (lbIndex - 1 + lbImages.length) % lbImages.length;
+  showLightboxSlide();
+});
+document.getElementById('lightboxNext').addEventListener('click', () => {
+  lbIndex = (lbIndex + 1) % lbImages.length;
+  showLightboxSlide();
+});
+lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+document.addEventListener('keydown', e => {
+  if (!lightbox.classList.contains('open')) return;
+  if (e.key === 'Escape') closeLightbox();
+  if (e.key === 'ArrowLeft') { lbIndex = (lbIndex - 1 + lbImages.length) % lbImages.length; showLightboxSlide(); }
+  if (e.key === 'ArrowRight') { lbIndex = (lbIndex + 1) % lbImages.length; showLightboxSlide(); }
+});
+
+// Wire up all sliders
+document.querySelectorAll('.forsale-slider').forEach(slider => {
+  const imgs = Array.from(slider.querySelectorAll('.forsale-slider__track img')).map(i => i.src);
+  slider.querySelectorAll('.forsale-slider__track img').forEach((img, idx) => {
+    img.addEventListener('click', () => openLightbox(imgs, idx));
+  });
+});

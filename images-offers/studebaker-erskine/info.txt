@@ -1,0 +1,7 @@
+Marka (Make):       Studebaker
+Model:              Erskine
+Rok (Year):         1928
+Przebieg (Mileage): —
+Cena (Price):       110 000 PLN
+Stan (Condition):
+Opis (Description): 
