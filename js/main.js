@@ -196,3 +196,36 @@ if (forsaleGrid && forsaleEmpty) {
   const hasListings = forsaleGrid.querySelector('.forsale-card');
   forsaleEmpty.classList.toggle('visible', !hasListings);
 }
+
+
+// ─── Listing photo sliders ───────────────────────────
+document.querySelectorAll('.forsale-slider').forEach(slider => {
+  const track  = slider.querySelector('.forsale-slider__track');
+  const imgs   = track.querySelectorAll('img');
+  const dotsEl = slider.querySelector('.forsale-slider__dots');
+  const count  = imgs.length;
+  let current  = 0;
+
+  slider.dataset.count = count;
+
+  // Build dots
+  imgs.forEach((_, i) => {
+    const dot = document.createElement('span');
+    if (i === 0) dot.classList.add('active');
+    dot.addEventListener('click', () => goTo(i));
+    dotsEl.appendChild(dot);
+  });
+
+  function goTo(idx) {
+    current = (idx + count) % count;
+    track.style.transform = `translateX(-${current * 100}%)`;
+    dotsEl.querySelectorAll('span').forEach((d, i) =>
+      d.classList.toggle('active', i === current)
+    );
+  }
+
+  slider.querySelector('.forsale-slider__btn--prev')
+    .addEventListener('click', () => goTo(current - 1));
+  slider.querySelector('.forsale-slider__btn--next')
+    .addEventListener('click', () => goTo(current + 1));
+});
