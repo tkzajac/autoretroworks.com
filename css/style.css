@@ -758,6 +758,8 @@ a.contact__value:hover { color: var(--gold); }
   .section { padding: 72px 0; }
 
   /* Nav */
+  .nav { gap: 12px; }
+  .nav__logo-sub { display: none; }
   .nav__links {
     position: fixed;
     top: 0; right: 0;
