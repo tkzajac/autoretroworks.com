@@ -801,3 +801,32 @@ a.contact__value:hover { color: var(--gold); }
   .btn { text-align: center; }
   .footer__top, .footer__bottom { justify-content: center; text-align: center; }
 }
+
+/* ─── Portfolio Show More ───────────────────────────── */
+.portfolio-item.over-limit {
+  display: none;
+}
+.portfolio__wrap {
+  position: relative;
+  margin-top: -120px;
+  padding-top: 120px;
+  pointer-events: none;
+}
+.portfolio__fade {
+  height: 180px;
+  background: linear-gradient(to bottom, transparent, var(--black));
+  transition: opacity 0.4s ease;
+}
+.portfolio__fade.gone { opacity: 0; }
+.portfolio__show-more {
+  display: block;
+  margin: 24px auto 0;
+  pointer-events: all;
+  transition: opacity 0.4s ease;
+}
+.portfolio__show-more.gone {
+  opacity: 0;
+  pointer-events: none;
+  height: 0;
+  margin: 0;
+}

@@ -81,7 +81,7 @@ document.addEventListener('click', e => {
 
 // ─── Scroll Reveal ───────────────────────────────────
 const revealObserver = new IntersectionObserver(entries => {
-  entries.forEach((entry, i) => {
+  entries.forEach((entry) => {
     if (entry.isIntersecting) {
       // Stagger delay based on position within parent
       const siblings = Array.from(entry.target.parentElement.querySelectorAll('.reveal'));
@@ -96,25 +96,54 @@ const revealObserver = new IntersectionObserver(entries => {
 document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
 
-// ─── Portfolio Filter ─────────────────────────────────
-const filterBtns    = document.querySelectorAll('.filter-btn');
+// ─── Portfolio Filter + Show More ────────────────────
+const filterBtns     = document.querySelectorAll('.filter-btn');
 const portfolioItems = document.querySelectorAll('.portfolio-item');
+const showMoreBtn    = document.getElementById('showMore');
+const portfolioFade  = document.getElementById('portfolioFade');
+const MAX_VISIBLE    = 6;
+let   isExpanded     = false;
+
+function applyPortfolio(filter) {
+  isExpanded = false;
+
+  // 1. Apply filter visibility
+  const matching = [];
+  portfolioItems.forEach(item => {
+    const match = filter === 'all' || item.dataset.category === filter;
+    item.classList.toggle('hidden', !match);
+    item.classList.remove('over-limit');
+    if (match) matching.push(item);
+  });
+
+  // 2. If more than MAX_VISIBLE, hide the rest and show fade/button
+  if (matching.length > MAX_VISIBLE) {
+    matching.slice(MAX_VISIBLE).forEach(item => item.classList.add('over-limit'));
+    portfolioFade.classList.remove('gone');
+    showMoreBtn.classList.remove('gone');
+  } else {
+    portfolioFade.classList.add('gone');
+    showMoreBtn.classList.add('gone');
+  }
+}
 
 filterBtns.forEach(btn => {
   btn.addEventListener('click', () => {
-    const filter = btn.dataset.filter;
-
-    // Toggle active
     filterBtns.forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
-
-    // Show/hide items
-    portfolioItems.forEach(item => {
-      const match = filter === 'all' || item.dataset.category === filter;
-      item.classList.toggle('hidden', !match);
-    });
+    applyPortfolio(btn.dataset.filter);
   });
 });
+
+showMoreBtn.addEventListener('click', () => {
+  isExpanded = true;
+  portfolioItems.forEach(item => item.classList.remove('over-limit'));
+  portfolioFade.classList.add('gone');
+  showMoreBtn.classList.add('gone');
+});
+
+// Init with 6 visible
+applyPortfolio('all');
 
 
 // ─── Contact Form ─────────────────────────────────────
