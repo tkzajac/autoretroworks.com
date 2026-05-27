@@ -1,5 +1,5 @@
-Marka (Make):       Studebaker
-Model:              Erskine
+Marka (Make):       Hudson
+Model:              Essex Six
 Rok (Year):         1928
 Przebieg (Mileage): —
 Cena (Price):       110 000 PLN
