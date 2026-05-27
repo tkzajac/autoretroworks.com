@@ -155,9 +155,20 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   font-size: 1.5rem;
   font-weight: 700;
   white-space: nowrap;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
 }
 .nav__logo-main  { color: var(--cream); }
 .nav__logo-accent { color: var(--gold); }
+.nav__logo-sub {
+  font-family: var(--font-sans);
+  font-size: 0.6rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--grey);
+}
 
 .nav__links {
   display: flex;
