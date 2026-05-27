@@ -548,7 +548,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   height: 100%;
   object-fit: cover;
   display: block;
-  filter: sepia(50%) brightness(0.92) contrast(1.05) saturate(0.85);
+  filter: sepia(30%) brightness(0.95) contrast(1.03) saturate(0.90);
   transition: transform 0.5s ease, filter 0.5s ease;
 }
 .portfolio-item:hover .portfolio-item__img img {
