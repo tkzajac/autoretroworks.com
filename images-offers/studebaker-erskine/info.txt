@@ -4,4 +4,5 @@ Rok (Year):         1928
 Przebieg (Mileage): —
 Cena (Price):       110 000 PLN
 Stan (Condition):
-Opis (Description): 
+Opis-PL:            Pełna dokumentacja. Gotowy do rejestracji. Wszystkie formalności i opłaty uregulowane.
+Opis-EN:            Full documentation. Ready to register. All formalities and fees settled.

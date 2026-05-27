@@ -198,6 +198,37 @@ if (forsaleGrid && forsaleEmpty) {
 }
 
 
+// ─── Load listing descriptions from info.txt ─────────
+document.querySelectorAll('.forsale-card[data-listing]').forEach(card => {
+  const folder  = card.dataset.listing;
+  const noteEl  = card.querySelector('.forsale-card__note');
+  if (!noteEl) return;
+
+  fetch(`${folder}/info.txt`)
+    .then(r => r.text())
+    .then(text => {
+      const parsed = {};
+      text.split('\n').forEach(line => {
+        const colon = line.indexOf(':');
+        if (colon === -1) return;
+        const key = line.slice(0, colon).trim();
+        const val = line.slice(colon + 1).trim();
+        if (val) parsed[key] = val;
+      });
+
+      const pl = parsed['Opis-PL'] || '';
+      const en = parsed['Opis-EN'] || pl;
+
+      if (pl) {
+        noteEl.setAttribute('data-pl', pl);
+        noteEl.setAttribute('data-en', en);
+        noteEl.textContent = currentLang.value === 'en' ? en : pl;
+      }
+    })
+    .catch(() => { /* no info.txt or no description — leave empty */ });
+});
+
+
 // ─── Listing photo sliders ───────────────────────────
 document.querySelectorAll('.forsale-slider').forEach(slider => {
   const track  = slider.querySelector('.forsale-slider__track');
