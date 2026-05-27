@@ -975,3 +975,11 @@ a.contact__value:hover { color: var(--gold); }
   transition: background var(--transition);
 }
 .forsale-slider__dots span.active { background: var(--gold); }
+
+.forsale-card__note {
+  font-size: 0.82rem;
+  color: var(--grey);
+  line-height: 1.6;
+  margin-bottom: 16px;
+  font-style: italic;
+}
