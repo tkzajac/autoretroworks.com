@@ -836,8 +836,8 @@ a.contact__value:hover { color: var(--gold); }
    ══════════════════════════════════════════════════════ */
 .forsale__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(340px, 400px));
-  gap: 28px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
   justify-content: center;
 }
 
@@ -913,7 +913,7 @@ a.contact__value:hover { color: var(--gold); }
 }
 .forsale__empty.visible { display: block; }
 
-@media (max-width: 1024px) {
+@media (max-width: 1100px) {
   .forsale__grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 600px) {
