@@ -450,7 +450,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
    ══════════════════════════════════════════════════════ */
 .services__grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 24px;
 }
 
@@ -528,7 +528,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 .portfolio__grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
 }
 
@@ -742,7 +742,6 @@ a.contact__value:hover { color: var(--gold); }
    RESPONSIVE
    ══════════════════════════════════════════════════════ */
 @media (max-width: 1024px) {
-  .services__grid       { grid-template-columns: repeat(2, 1fr); }
   .portfolio__grid      { grid-template-columns: repeat(2, 1fr); }
   .about__grid          { gap: 48px; }
 }
