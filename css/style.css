@@ -240,17 +240,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .hero__bg {
   position: absolute;
   inset: 0;
-  background:
-    /* Subtle texture lines */
-    repeating-linear-gradient(
-      -45deg,
-      transparent,
-      transparent 40px,
-      rgba(201,168,76,0.02) 40px,
-      rgba(201,168,76,0.02) 41px
-    ),
-    /* Main gradient */
-    radial-gradient(ellipse at 70% 50%, #2A2218 0%, #1A1510 40%, #0D0D0D 100%);
+  background: url('../images/hero-bg.jpg') center center / cover no-repeat;
 }
 
 .hero__overlay {
