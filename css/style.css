@@ -838,6 +838,7 @@ a.contact__value:hover { color: var(--gold); }
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(340px, 400px));
   gap: 28px;
+  justify-content: center;
 }
 
 .forsale-card {
