@@ -187,3 +187,12 @@ const sectionObserver = new IntersectionObserver(entries => {
 }, { rootMargin: '-40% 0px -50% 0px' });
 
 sections.forEach(s => sectionObserver.observe(s));
+
+
+// ─── For Sale – empty state ───────────────────────────
+const forsaleGrid  = document.getElementById('forsaleGrid');
+const forsaleEmpty = document.getElementById('forsaleEmpty');
+if (forsaleGrid && forsaleEmpty) {
+  const hasListings = forsaleGrid.querySelector('.forsale-card');
+  forsaleEmpty.classList.toggle('visible', !hasListings);
+}

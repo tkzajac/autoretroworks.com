@@ -830,3 +830,91 @@ a.contact__value:hover { color: var(--gold); }
   height: 0;
   margin: 0;
 }
+
+/* ══════════════════════════════════════════════════════
+   FOR SALE / OGŁOSZENIA
+   ══════════════════════════════════════════════════════ */
+.forsale__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.forsale-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.forsale-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+  border-color: rgba(201,168,76,0.4);
+}
+
+.forsale-card__img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+}
+.forsale-card__img img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+.forsale-card:hover .forsale-card__img img { transform: scale(1.04); }
+
+.forsale-card__body {
+  padding: 24px;
+}
+.forsale-card__title {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--cream);
+  margin-bottom: 16px;
+}
+
+.forsale-card__details {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+}
+.forsale-card__details li {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+}
+.forsale-card__details li span { color: var(--grey); }
+.forsale-card__details li strong { color: var(--cream-dim); }
+
+.forsale-card__price {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--gold);
+  margin-bottom: 20px;
+}
+
+/* Empty state */
+.forsale__empty {
+  text-align: center;
+  padding: 48px 0;
+  color: var(--grey);
+  font-size: 1rem;
+  display: none;
+}
+.forsale__empty.visible { display: block; }
+
+@media (max-width: 1024px) {
+  .forsale__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .forsale__grid { grid-template-columns: 1fr; }
+}
