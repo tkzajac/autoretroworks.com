@@ -1,0 +1,160 @@
+/* ══════════════════════════════════════════════════════
+   AutoRetroWorks – Main JavaScript
+   ══════════════════════════════════════════════════════ */
+
+// ─── Language Toggle ─────────────────────────────────
+const currentLang = { value: 'pl' };
+
+function setLanguage(lang) {
+  currentLang.value = lang;
+
+  // Update all data-pl / data-en elements
+  document.querySelectorAll('[data-pl]').forEach(el => {
+    const text = el.getAttribute(`data-${lang}`);
+    if (text) el.innerHTML = text;
+  });
+
+  // Update placeholders
+  document.querySelectorAll('[data-placeholder-pl]').forEach(el => {
+    const ph = el.getAttribute(`data-placeholder-${lang}`);
+    if (ph) el.placeholder = ph;
+  });
+
+  // Update lang buttons
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.lang === lang);
+  });
+
+  // Update html lang attr
+  document.documentElement.lang = lang;
+
+  // Save preference
+  localStorage.setItem('arw-lang', lang);
+}
+
+document.querySelectorAll('.lang-btn').forEach(btn => {
+  btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
+});
+
+// Restore saved language
+const savedLang = localStorage.getItem('arw-lang');
+if (savedLang && savedLang !== 'pl') setLanguage(savedLang);
+
+
+// ─── Sticky Header ───────────────────────────────────
+const header = document.getElementById('header');
+function onScroll() {
+  header.classList.toggle('scrolled', window.scrollY > 60);
+}
+window.addEventListener('scroll', onScroll, { passive: true });
+onScroll();
+
+
+// ─── Mobile Menu ─────────────────────────────────────
+const burger    = document.getElementById('burger');
+const navLinks  = document.getElementById('navLinks');
+
+burger.addEventListener('click', () => {
+  const open = navLinks.classList.toggle('open');
+  burger.classList.toggle('open', open);
+  document.body.style.overflow = open ? 'hidden' : '';
+});
+
+// Close menu on link click
+navLinks.querySelectorAll('.nav__link').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    burger.classList.remove('open');
+    document.body.style.overflow = '';
+  });
+});
+
+// Close menu on outside click
+document.addEventListener('click', e => {
+  if (!navLinks.contains(e.target) && !burger.contains(e.target)) {
+    navLinks.classList.remove('open');
+    burger.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+});
+
+
+// ─── Scroll Reveal ───────────────────────────────────
+const revealObserver = new IntersectionObserver(entries => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      // Stagger delay based on position within parent
+      const siblings = Array.from(entry.target.parentElement.querySelectorAll('.reveal'));
+      const idx = siblings.indexOf(entry.target);
+      entry.target.style.transitionDelay = `${idx * 80}ms`;
+      entry.target.classList.add('visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+
+// ─── Portfolio Filter ─────────────────────────────────
+const filterBtns    = document.querySelectorAll('.filter-btn');
+const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const filter = btn.dataset.filter;
+
+    // Toggle active
+    filterBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    // Show/hide items
+    portfolioItems.forEach(item => {
+      const match = filter === 'all' || item.dataset.category === filter;
+      item.classList.toggle('hidden', !match);
+    });
+  });
+});
+
+
+// ─── Contact Form ─────────────────────────────────────
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+  contactForm.addEventListener('submit', e => {
+    e.preventDefault();
+
+    const btn = contactForm.querySelector('button[type="submit"]');
+    const originalText = btn.textContent;
+
+    // Simple feedback
+    btn.textContent = currentLang.value === 'pl' ? 'Wysłano! ✓' : 'Sent! ✓';
+    btn.style.background = '#4CAF50';
+    btn.style.color = '#fff';
+    btn.disabled = true;
+
+    setTimeout(() => {
+      btn.textContent = originalText;
+      btn.style.background = '';
+      btn.style.color = '';
+      btn.disabled = false;
+      contactForm.reset();
+    }, 3000);
+  });
+}
+
+
+// ─── Active Nav Link on Scroll ────────────────────────
+const sections = document.querySelectorAll('section[id]');
+const navAnchors = document.querySelectorAll('.nav__link');
+
+const sectionObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      navAnchors.forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === `#${entry.target.id}`);
+      });
+    }
+  });
+}, { rootMargin: '-40% 0px -50% 0px' });
+
+sections.forEach(s => sectionObserver.observe(s));

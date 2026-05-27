@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="AutoRetroWorks – Piotr Kapustka. Renowacje i restauracje samochodów klasycznych i nowoczesnych. High-end auto renovations." />
+  <title>AutoRetroWorks – Piotr Kapustka</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════ NAV ═══════════════════════════════ -->
+  <header class="header" id="header">
+    <nav class="nav container">
+      <a href="#hero" class="nav__logo">
+        <span class="nav__logo-main">AutoRetro</span><span class="nav__logo-accent">Works</span>
+      </a>
+
+      <ul class="nav__links" id="navLinks">
+        <li><a href="#about"     class="nav__link" data-pl="O Nas"      data-en="About">O Nas</a></li>
+        <li><a href="#services"  class="nav__link" data-pl="Usługi"     data-en="Services">Usługi</a></li>
+        <li><a href="#portfolio" class="nav__link" data-pl="Realizacje" data-en="Portfolio">Realizacje</a></li>
+        <li><a href="#contact"   class="nav__link" data-pl="Kontakt"    data-en="Contact">Kontakt</a></li>
+      </ul>
+
+      <div class="nav__right">
+        <div class="lang-toggle" id="langToggle">
+          <button class="lang-btn active" data-lang="pl">PL</button>
+          <span class="lang-divider">|</span>
+          <button class="lang-btn" data-lang="en">EN</button>
+        </div>
+        <button class="nav__burger" id="burger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ═══════════════════════════════ HERO ═══════════════════════════════ -->
+  <section class="hero" id="hero">
+    <div class="hero__bg"></div>
+    <div class="hero__overlay"></div>
+    <div class="hero__content container">
+      <p class="hero__eyebrow"
+         data-pl="Renowacja samochodów klasycznych i nowoczesnych"
+         data-en="Classic &amp; Modern Automotive Restoration">
+        Renowacja samochodów klasycznych i nowoczesnych
+      </p>
+      <h1 class="hero__title">
+        <span data-pl="Sztuka" data-en="The Art">Sztuka</span><br />
+        <em data-pl="Renowacji" data-en="of Restoration">Renowacji</em>
+      </h1>
+      <p class="hero__sub"
+         data-pl="Każdy samochód ma swoją historię. My ją przywracamy."
+         data-en="Every car has a story. We bring it back to life.">
+        Każdy samochód ma swoją historię. My ją przywracamy.
+      </p>
+      <div class="hero__ctas">
+        <a href="#portfolio" class="btn btn--primary"
+           data-pl="Zobacz Realizacje" data-en="View Portfolio">Zobacz Realizacje</a>
+        <a href="#contact" class="btn btn--outline"
+           data-pl="Skontaktuj się" data-en="Get in Touch">Skontaktuj się</a>
+      </div>
+    </div>
+    <div class="hero__scroll-hint">
+      <span></span>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ ABOUT ═══════════════════════════════ -->
+  <section class="about section" id="about">
+    <div class="container">
+      <div class="about__grid">
+        <div class="about__image-wrap">
+          <div class="about__image-placeholder">
+            <!-- Replace with: <img src="images/piotr.jpg" alt="Piotr Kapustka" /> -->
+            <div class="img-placeholder img-placeholder--portrait">
+              <span data-pl="Zdjęcie Piotra" data-en="Piotr's Photo">Zdjęcie Piotra</span>
+            </div>
+          </div>
+          <div class="about__badge">
+            <span class="about__badge-years">20<sup>+</sup></span>
+            <span class="about__badge-label"
+                  data-pl="lat doświadczenia" data-en="years experience">lat doświadczenia</span>
+          </div>
+        </div>
+
+        <div class="about__text">
+          <p class="section__eyebrow" data-pl="O Nas" data-en="About Us">O Nas</p>
+          <h2 class="section__title"
+              data-pl="Pasja przekuta<br/>w rzemiosło" data-en="Passion turned<br/>into craft">
+            Pasja przekuta<br/>w rzemiosło
+          </h2>
+          <p data-pl="Jestem Piotr Kapustka — mechanik, lakiernik i restaurator z ponad 20-letnim doświadczeniem. Moja praca to nie tylko naprawa samochodów, to przywracanie im dawnej świetności i nowego życia."
+             data-en="I'm Piotr Kapustka — mechanic, painter, and restorer with over 20 years of experience. My work is not just fixing cars; it's restoring their former glory and breathing new life into them.">
+            Jestem Piotr Kapustka — mechanik, lakiernik i restaurator z ponad 20-letnim doświadczeniem. Moja praca to nie tylko naprawa samochodów, to przywracanie im dawnej świetności i nowego życia.
+          </p>
+          <p data-pl="Pracuję zarówno ze zleceniami restauracji aut klasycznych, jak i renowacją nowoczesnych pojazdów premium. Każdy projekt traktuję indywidualnie, z najwyższą dbałością o szczegóły."
+             data-en="I work with both classic car restoration projects and premium modern vehicle renovations. I treat every project individually, with the highest attention to detail.">
+            Pracuję zarówno ze zleceniami restauracji aut klasycznych, jak i renowacją nowoczesnych pojazdów premium. Każdy projekt traktuję indywidualnie, z najwyższą dbałością o szczegóły.
+          </p>
+          <ul class="about__values">
+            <li>
+              <span class="about__values-icon">✦</span>
+              <span data-pl="Najwyższa jakość materiałów" data-en="Highest quality materials">Najwyższa jakość materiałów</span>
+            </li>
+            <li>
+              <span class="about__values-icon">✦</span>
+              <span data-pl="Indywidualne podejście do każdego zlecenia" data-en="Individual approach to every project">Indywidualne podejście do każdego zlecenia</span>
+            </li>
+            <li>
+              <span class="about__values-icon">✦</span>
+              <span data-pl="Pełna transparentność i terminowość" data-en="Full transparency and reliability">Pełna transparentność i terminowość</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ SERVICES ═══════════════════════════════ -->
+  <section class="services section section--dark" id="services">
+    <div class="container">
+      <div class="section__header">
+        <p class="section__eyebrow" data-pl="Co oferujemy" data-en="What We Offer">Co oferujemy</p>
+        <h2 class="section__title"
+            data-pl="Nasze Usługi" data-en="Our Services">Nasze Usługi</h2>
+      </div>
+      <div class="services__grid">
+
+        <div class="service-card reveal">
+          <div class="service-card__icon">🔧</div>
+          <h3 class="service-card__title"
+              data-pl="Pełna Restauracja" data-en="Full Restoration">Pełna Restauracja</h3>
+          <p class="service-card__desc"
+             data-pl="Kompleksowa restauracja samochodów klasycznych od fundamentów — blacharstwo, mechanika, tapicerka, lakier."
+             data-en="Complete restoration of classic cars from the ground up — bodywork, mechanics, upholstery, paint.">
+            Kompleksowa restauracja samochodów klasycznych od fundamentów — blacharstwo, mechanika, tapicerka, lakier.
+          </p>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-card__icon">🎨</div>
+          <h3 class="service-card__title"
+              data-pl="Lakiernictwo" data-en="Paint &amp; Finishing">Lakiernictwo</h3>
+          <p class="service-card__desc"
+             data-pl="Profesjonalne malowanie pojazdów, renowacja lakieru, korekta i polerowanie — idealne wykończenie."
+             data-en="Professional vehicle painting, paint restoration, correction and polishing — perfect finish every time.">
+            Profesjonalne malowanie pojazdów, renowacja lakieru, korekta i polerowanie — idealne wykończenie.
+          </p>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-card__icon">🔨</div>
+          <h3 class="service-card__title"
+              data-pl="Blacharstwo" data-en="Bodywork">Blacharstwo</h3>
+          <p class="service-card__desc"
+             data-pl="Naprawa i formowanie karoserii, usuwanie rdzy, spawanie i odbudowa elementów zgodnie z oryginałem."
+             data-en="Body panel repair and forming, rust removal, welding and rebuilding parts to original spec.">
+            Naprawa i formowanie karoserii, usuwanie rdzy, spawanie i odbudowa elementów zgodnie z oryginałem.
+          </p>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-card__icon">🪡</div>
+          <h3 class="service-card__title"
+              data-pl="Tapicerka" data-en="Upholstery">Tapicerka</h3>
+          <p class="service-card__desc"
+             data-pl="Renowacja i wymiana tapicerki wnętrza — skóra, alcantara, tkaniny vintage zgodne z epoki."
+             data-en="Interior upholstery restoration and replacement — leather, alcantara, period-correct vintage fabrics.">
+            Renowacja i wymiana tapicerki wnętrza — skóra, alcantara, tkaniny vintage zgodne z epoki.
+          </p>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-card__icon">⚙️</div>
+          <h3 class="service-card__title"
+              data-pl="Mechanika" data-en="Mechanical Work">Mechanika</h3>
+          <p class="service-card__desc"
+             data-pl="Naprawa i regeneracja silników, skrzyni biegów, układu hamulcowego i zawieszenia klasycznych aut."
+             data-en="Engine and gearbox repair and rebuild, brake systems, suspension restoration on classic vehicles.">
+            Naprawa i regeneracja silników, skrzyni biegów, układu hamulcowego i zawieszenia klasycznych aut.
+          </p>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-card__icon">✨</div>
+          <h3 class="service-card__title"
+              data-pl="Detailing Premium" data-en="Premium Detailing">Detailing Premium</h3>
+          <p class="service-card__desc"
+             data-pl="Szczegółowe czyszczenie, powłoki ceramiczne, folia ochronna PPF — dla aut które muszą wyglądać perfekcyjnie."
+             data-en="Deep cleaning, ceramic coatings, PPF protective film — for cars that need to look absolutely perfect.">
+            Szczegółowe czyszczenie, powłoki ceramiczne, folia ochronna PPF — dla aut które muszą wyglądać perfekcyjnie.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ PORTFOLIO ═══════════════════════════════ -->
+  <section class="portfolio section" id="portfolio">
+    <div class="container">
+      <div class="section__header">
+        <p class="section__eyebrow" data-pl="Nasze prace" data-en="Our Work">Nasze prace</p>
+        <h2 class="section__title"
+            data-pl="Realizacje" data-en="Portfolio">Realizacje</h2>
+      </div>
+
+      <div class="portfolio__filters">
+        <button class="filter-btn active" data-filter="all"
+                data-pl="Wszystkie" data-en="All">Wszystkie</button>
+        <button class="filter-btn" data-filter="classic"
+                data-pl="Klasyki" data-en="Classics">Klasyki</button>
+        <button class="filter-btn" data-filter="modern"
+                data-pl="Nowoczesne" data-en="Modern">Nowoczesne</button>
+        <button class="filter-btn" data-filter="paint"
+                data-pl="Lakiernictwo" data-en="Paint">Lakiernictwo</button>
+      </div>
+
+      <div class="portfolio__grid">
+
+        <div class="portfolio-item reveal" data-category="classic">
+          <div class="portfolio-item__img img-placeholder">
+            <!-- Replace with: <img src="images/portfolio/01.jpg" alt="..." /> -->
+          </div>
+          <div class="portfolio-item__overlay">
+            <span class="portfolio-item__tag"
+                  data-pl="Klasyk" data-en="Classic">Klasyk</span>
+            <h3 data-pl="Mercedes W123 – Pełna restauracja" data-en="Mercedes W123 – Full Restoration">
+              Mercedes W123 – Pełna restauracja</h3>
+          </div>
+        </div>
+
+        <div class="portfolio-item reveal" data-category="paint">
+          <div class="portfolio-item__img img-placeholder img-placeholder--2"></div>
+          <div class="portfolio-item__overlay">
+            <span class="portfolio-item__tag"
+                  data-pl="Lakiernictwo" data-en="Paint">Lakiernictwo</span>
+            <h3 data-pl="BMW E30 – Renowacja lakieru" data-en="BMW E30 – Paint Restoration">
+              BMW E30 – Renowacja lakieru</h3>
+          </div>
+        </div>
+
+        <div class="portfolio-item reveal" data-category="modern">
+          <div class="portfolio-item__img img-placeholder img-placeholder--3"></div>
+          <div class="portfolio-item__overlay">
+            <span class="portfolio-item__tag"
+                  data-pl="Nowoczesny" data-en="Modern">Nowoczesny</span>
+            <h3 data-pl="Porsche 911 – Detailing &amp; PPF" data-en="Porsche 911 – Detailing &amp; PPF">
+              Porsche 911 – Detailing &amp; PPF</h3>
+          </div>
+        </div>
+
+        <div class="portfolio-item reveal" data-category="classic">
+          <div class="portfolio-item__img img-placeholder img-placeholder--4"></div>
+          <div class="portfolio-item__overlay">
+            <span class="portfolio-item__tag"
+                  data-pl="Klasyk" data-en="Classic">Klasyk</span>
+            <h3 data-pl="Fiat 125p – Restauracja od podstaw" data-en="Fiat 125p – Ground-Up Restoration">
+              Fiat 125p – Restauracja od podstaw</h3>
+          </div>
+        </div>
+
+        <div class="portfolio-item reveal" data-category="paint">
+          <div class="portfolio-item__img img-placeholder img-placeholder--5"></div>
+          <div class="portfolio-item__overlay">
+            <span class="portfolio-item__tag"
+                  data-pl="Lakiernictwo" data-en="Paint">Lakiernictwo</span>
+            <h3 data-pl="Audi RS6 – Powłoka ceramiczna" data-en="Audi RS6 – Ceramic Coating">
+              Audi RS6 – Powłoka ceramiczna</h3>
+          </div>
+        </div>
+
+        <div class="portfolio-item reveal" data-category="classic">
+          <div class="portfolio-item__img img-placeholder img-placeholder--6"></div>
+          <div class="portfolio-item__overlay">
+            <span class="portfolio-item__tag"
+                  data-pl="Klasyk" data-en="Classic">Klasyk</span>
+            <h3 data-pl="VW Garbus – Renowacja karoserii" data-en="VW Beetle – Body Restoration">
+              VW Garbus – Renowacja karoserii</h3>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ CONTACT ═══════════════════════════════ -->
+  <section class="contact section section--dark" id="contact">
+    <div class="container">
+      <div class="section__header">
+        <p class="section__eyebrow" data-pl="Skontaktuj się" data-en="Get In Touch">Skontaktuj się</p>
+        <h2 class="section__title"
+            data-pl="Porozmawiajmy o Twoim aucie" data-en="Let's talk about your car">
+          Porozmawiajmy o Twoim aucie</h2>
+      </div>
+
+      <div class="contact__grid">
+        <div class="contact__info">
+          <div class="contact__item">
+            <span class="contact__icon">📞</span>
+            <div>
+              <p class="contact__label" data-pl="Telefon" data-en="Phone">Telefon</p>
+              <a href="tel:+48XXXXXXXXX" class="contact__value">+48 XXX XXX XXX</a>
+            </div>
+          </div>
+          <div class="contact__item">
+            <span class="contact__icon">✉️</span>
+            <div>
+              <p class="contact__label" data-pl="E-mail" data-en="Email">E-mail</p>
+              <a href="mailto:piotr@autoretroworks.com" class="contact__value">piotr@autoretroworks.com</a>
+            </div>
+          </div>
+          <div class="contact__item">
+            <span class="contact__icon">📍</span>
+            <div>
+              <p class="contact__label" data-pl="Lokalizacja" data-en="Location">Lokalizacja</p>
+              <p class="contact__value" data-pl="[Miasto, Województwo]" data-en="[City, Region]">[Miasto, Województwo]</p>
+            </div>
+          </div>
+          <div class="contact__item">
+            <span class="contact__icon">🕐</span>
+            <div>
+              <p class="contact__label" data-pl="Godziny pracy" data-en="Working Hours">Godziny pracy</p>
+              <p class="contact__value"
+                 data-pl="Pon–Pt: 8:00–17:00" data-en="Mon–Fri: 8:00–17:00">Pon–Pt: 8:00–17:00</p>
+            </div>
+          </div>
+        </div>
+
+        <form class="contact__form" id="contactForm">
+          <div class="form__row">
+            <div class="form__group">
+              <label for="name" data-pl="Imię i nazwisko" data-en="Full Name">Imię i nazwisko</label>
+              <input type="text" id="name" name="name" required
+                     data-placeholder-pl="Jan Kowalski" data-placeholder-en="John Smith"
+                     placeholder="Jan Kowalski" />
+            </div>
+            <div class="form__group">
+              <label for="phone" data-pl="Telefon" data-en="Phone">Telefon</label>
+              <input type="tel" id="phone" name="phone"
+                     placeholder="+48 000 000 000" />
+            </div>
+          </div>
+          <div class="form__group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required
+                   data-placeholder-pl="jan@przykład.pl" data-placeholder-en="john@example.com"
+                   placeholder="jan@przykład.pl" />
+          </div>
+          <div class="form__group">
+            <label for="car" data-pl="Model samochodu" data-en="Car Model">Model samochodu</label>
+            <input type="text" id="car" name="car"
+                   data-placeholder-pl="np. Mercedes W123, 1982" data-placeholder-en="e.g. Mercedes W123, 1982"
+                   placeholder="np. Mercedes W123, 1982" />
+          </div>
+          <div class="form__group">
+            <label for="message" data-pl="Wiadomość" data-en="Message">Wiadomość</label>
+            <textarea id="message" name="message" rows="4" required
+                      data-placeholder-pl="Opisz czego potrzebujesz..." data-placeholder-en="Describe what you need..."
+                      placeholder="Opisz czego potrzebujesz..."></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary btn--full"
+                  data-pl="Wyślij wiadomość" data-en="Send Message">Wyślij wiadomość</button>
+          <p class="form__note"
+             data-pl="Odpiszę w ciągu 24 godzin." data-en="I'll reply within 24 hours.">
+            Odpiszę w ciągu 24 godzin.
+          </p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ FOOTER ═══════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <a href="#hero" class="nav__logo">
+          <span class="nav__logo-main">AutoRetro</span><span class="nav__logo-accent">Works</span>
+        </a>
+        <p class="footer__tagline"
+           data-pl="Renowacja samochodów klasycznych i nowoczesnych"
+           data-en="Classic &amp; Modern Automotive Restoration">
+          Renowacja samochodów klasycznych i nowoczesnych
+        </p>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2024 AutoRetroWorks – Piotr Kapustka</p>
+        <p>
+          <a href="mailto:piotr@autoretroworks.com">piotr@autoretroworks.com</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
