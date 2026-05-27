@@ -1,0 +1,7 @@
+Marka (Make):       Buick
+Model:              Model 47
+Rok (Year):         1930
+Przebieg (Mileage): —
+Cena (Price):       110 000 PLN
+Stan (Condition):
+Opis (Description):
