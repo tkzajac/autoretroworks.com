@@ -6,3 +6,4 @@ Cena (Price):       110 000 PLN
 Stan (Condition):
 Opis-PL:            Pełna dokumentacja. Gotowy do rejestracji. Wszystkie formalności i opłaty uregulowane.
 Opis-EN:            Full documentation. Ready to register. All formalities and fees settled.
+Opis-DE:            Vollständige Dokumentation. Bereit zur Zulassung. Alle Formalitäten und Gebühren erledigt.

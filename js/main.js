@@ -156,7 +156,7 @@ if (contactForm) {
     const originalText = btn.textContent;
 
     // Simple feedback
-    btn.textContent = currentLang.value === 'pl' ? 'Wysłano! ✓' : 'Sent! ✓';
+    btn.textContent = currentLang.value === 'pl' ? 'Wysłano! ✓' : currentLang.value === 'de' ? 'Gesendet! ✓' : 'Sent! ✓';
     btn.style.background = '#4CAF50';
     btn.style.color = '#fff';
     btn.disabled = true;
@@ -218,11 +218,13 @@ document.querySelectorAll('.forsale-card[data-listing]').forEach(card => {
 
       const pl = parsed['Opis-PL'] || '';
       const en = parsed['Opis-EN'] || pl;
+      const de = parsed['Opis-DE'] || en;
 
       if (pl) {
         noteEl.setAttribute('data-pl', pl);
         noteEl.setAttribute('data-en', en);
-        noteEl.textContent = currentLang.value === 'en' ? en : pl;
+        noteEl.setAttribute('data-de', de);
+        noteEl.textContent = currentLang.value === 'en' ? en : currentLang.value === 'de' ? de : pl;
       }
     })
     .catch(() => { /* no info.txt or no description — leave empty */ });
