@@ -485,9 +485,16 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .service-card:hover::before { transform: scaleX(1); }
 
 .service-card__icon {
-  font-size: 2rem;
   margin-bottom: 20px;
   display: block;
+  color: var(--gold);
+  width: 40px;
+  height: 40px;
+}
+.service-card__icon svg {
+  width: 40px;
+  height: 40px;
+  stroke: var(--gold);
 }
 .service-card__title {
   font-family: var(--font-serif);
